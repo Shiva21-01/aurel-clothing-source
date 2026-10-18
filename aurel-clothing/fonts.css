@@ -1,0 +1,40 @@
+/* Self-hosted fonts: headings use Cormorant Garamond; body text uses DM Sans.
+ * Keep the license files in assets/fonts/ when sharing or moving these fonts.
+ * font-display: swap keeps text readable while the font files load.
+ */
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/cormorant-garamond-italic-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/cormorant-garamond-normal-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-500.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-700.ttf) format('truetype');
+}

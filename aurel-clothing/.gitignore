@@ -1,0 +1,12 @@
+# Generated dependencies and editor/system files.
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Keep local credentials and exported archives out of source control.
+.env
+.env.*
+*.zip

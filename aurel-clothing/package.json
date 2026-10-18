@@ -1,0 +1,20 @@
+{
+  "name": "aurel-clothing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AUREL responsive fashion storefront built with HTML, CSS, and JavaScript",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test checks/catalogue.test.mjs",
+    "check": "node --check app.js && node --check catalogue.js && node --check data/products.js && node --check data/information.js && node --check scripts/serve.mjs && npm test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

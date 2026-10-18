@@ -1,0 +1,638 @@
+<!doctype html>
+<!-- AURÉL: page structure and copy. Styles are in styles.css; behavior is in app.js. -->
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#394638" />
+    <meta
+      name="description"
+      content="Discover AURÉL: a considered collection of everyday essentials and occasionwear for women, men, and little ones. Everyday, elevated."
+    />
+    <meta property="og:title" content="AURÉL — Everyday, elevated." />
+    <meta
+      property="og:description"
+      content="Modern essentials. Memorable occasions. A considered wardrobe for every chapter."
+    />
+    <!-- After hosting, add og:url and an absolute og:image URL for your own domain. -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="assets/campaign.webp" fetchpriority="high" />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css?v=3" />
+    <title>AURÉL — Everyday, elevated.</title>
+    <!-- app.js imports the catalogue and connects data-* attributes to interactions. -->
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a href="#collection" class="skip-link">Skip to the collection</a>
+    <div class="announcement">
+      <span>A considered wardrobe. For every chapter.</span>
+      <span class="announcement-right">INDIA <span aria-hidden="true">/</span> INR ₹</span>
+    </div>
+
+    <!-- The navigation stays within reach as shoppers explore the collection. -->
+    <header class="site-header">
+      <button
+        class="icon-button mobile-menu-toggle"
+        id="menu-toggle"
+        aria-label="Open navigation"
+        data-icon="menu"
+      ></button>
+      <a class="brand" href="#" data-home aria-label="AURÉL home">
+        <svg class="brand-symbol" viewBox="0 0 48 54" fill="none" aria-hidden="true">
+          <path
+            d="M4 47 24 6l20 41M12 34h24M17 47l7-15 7 15M24 6v16"
+            stroke="currentColor"
+            stroke-width="1.4"
+          />
+          <path d="M8 51h32" stroke="currentColor" stroke-width="1" />
+        </svg>
+        <span class="brand-wordmark">AURÉL<span>EVERYDAY, ELEVATED</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <button data-category="women">Women</button>
+        <button data-category="men">Men</button>
+        <button data-category="kids">Kids</button>
+        <button data-occasion="all" data-all-pieces>
+          New & considered <span class="nav-dot" aria-hidden="true"></span>
+        </button>
+        <a href="#occasions">By occasion</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="icon-button"
+          id="search-toggle"
+          aria-label="Search the store"
+          data-icon="search"
+        ></button>
+        <button
+          class="icon-button favourite-toggle"
+          id="favourites-toggle"
+          aria-label="View saved pieces"
+        >
+          <span data-icon="heart"></span
+          ><span class="small-count" id="favourites-count" hidden>0</span>
+        </button>
+        <button class="bag-toggle" id="bag-toggle" aria-label="Open shopping bag, 0 items">
+          <span data-icon="bag"></span><span class="bag-label">Bag</span
+          ><span class="bag-count" id="bag-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Five campaign slides. app.js owns the looping timer and accessible controls. -->
+      <section class="hero" aria-label="The AURÉL collection" aria-roledescription="carousel">
+        <div class="hero-slides">
+          <article
+            class="hero-slide active"
+            data-slide-panel="0"
+            aria-roledescription="slide"
+            aria-label="1 of 5: Everyday, elevated"
+          >
+            <img
+              src="assets/campaign.webp"
+              class="hero-image"
+              alt="Two models in relaxed ivory and olive linen in a sunlit stone courtyard"
+              fetchpriority="high"
+            />
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+              <p class="eyebrow light"><span></span> THE AURÉL WAY OF LIVING</p>
+              <h1>Everyday,<br /><em>elevated.</em></h1>
+              <p>
+                Considered pieces. Effortless style.<br />For you, and every version of your day.
+              </p>
+              <button class="button button-cream" data-all-pieces>
+                Discover the collection <span data-icon="arrow-right"></span>
+              </button>
+            </div>
+            <span class="hero-side-note">THE NEW WARDROBE / VOL. 01</span>
+          </article>
+          <article
+            class="hero-slide"
+            data-slide-panel="1"
+            aria-roledescription="slide"
+            aria-label="2 of 5: The women's edit"
+            aria-hidden="true"
+            inert
+          >
+            <img
+              src="assets/women-campaign.webp"
+              class="hero-image women-hero-image"
+              alt="Contemporary women's fashion styled for the city"
+            />
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+              <p class="eyebrow light"><span></span> THE WOMEN'S EDIT</p>
+              <h2>Her style.<br /><em>Her story.</em></h2>
+              <p>Soft shapes. Quiet confidence.<br />Pieces for every version of you.</p>
+              <button class="button button-cream" data-category="women">
+                Explore womenswear <span data-icon="arrow-right"></span>
+              </button>
+            </div>
+          </article>
+          <article
+            class="hero-slide"
+            data-slide-panel="2"
+            aria-roledescription="slide"
+            aria-label="3 of 5: The men's edit"
+            aria-hidden="true"
+            inert
+          >
+            <img
+              src="assets/men-campaign.webp"
+              class="hero-image"
+              alt="A man in a linen shirt and tailored trousers beside a warm stone wall"
+            />
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+              <p class="eyebrow light"><span></span> THE MEN'S EDIT</p>
+              <h2>Less effort.<br /><em>More you.</em></h2>
+              <p>From the first meeting to the last light.<br />The essentials, reconsidered.</p>
+              <button class="button button-cream" data-category="men">
+                Explore menswear <span data-icon="arrow-right"></span>
+              </button>
+            </div>
+          </article>
+          <article
+            class="hero-slide"
+            data-slide-panel="3"
+            aria-roledescription="slide"
+            aria-label="4 of 5: The little edit"
+            aria-hidden="true"
+            inert
+          >
+            <img
+              src="assets/kids-campaign.webp"
+              class="hero-image"
+              alt="Two children enjoying the sunshine in comfortable cream and sage outfits"
+            />
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+              <p class="eyebrow light"><span></span> THE LITTLE EDIT</p>
+              <h2>Little days.<br /><em>Big adventures.</em></h2>
+              <p>Room to play. Space to grow.<br />A little style for their whole world.</p>
+              <button class="button button-cream" data-category="kids">
+                Explore kidswear <span data-icon="arrow-right"></span>
+              </button>
+            </div>
+          </article>
+          <article
+            class="hero-slide"
+            data-slide-panel="4"
+            aria-roledescription="slide"
+            aria-label="5 of 5: The celebration edit"
+            aria-hidden="true"
+            inert
+          >
+            <img
+              src="assets/festive-campaign.webp"
+              class="hero-image"
+              alt="A couple in a maroon sari and an ivory kurta with an olive waistcoat"
+            />
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+              <p class="eyebrow light"><span></span> THE CELEBRATION EDIT</p>
+              <h2>For moments<br /><em>that stay.</em></h2>
+              <p>
+                A touch of tradition. A modern point of view.<br />Dress for the memories you will
+                make.
+              </p>
+              <button class="button button-cream" data-occasion="Festive">
+                Discover occasionwear <span data-icon="arrow-right"></span>
+              </button>
+            </div>
+          </article>
+        </div>
+        <div class="hero-controls">
+          <div class="slide-pagination" aria-label="Choose a campaign slide">
+            <button
+              class="slide-dot active"
+              data-slide="0"
+              aria-label="Show slide 1"
+              aria-current="true"
+            >
+              <i aria-hidden="true"></i>
+            </button>
+            <button class="slide-dot" data-slide="1" aria-label="Show slide 2">
+              <i aria-hidden="true"></i>
+            </button>
+            <button class="slide-dot" data-slide="2" aria-label="Show slide 3">
+              <i aria-hidden="true"></i>
+            </button>
+            <button class="slide-dot" data-slide="3" aria-label="Show slide 4">
+              <i aria-hidden="true"></i>
+            </button>
+            <button class="slide-dot" data-slide="4" aria-label="Show slide 5">
+              <i aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="slide-actions">
+            <button
+              class="icon-button"
+              id="slide-pause"
+              aria-label="Pause slideshow"
+              data-icon="pause"
+            ></button>
+            <button
+              class="icon-button"
+              id="slide-prev"
+              aria-label="Previous slide"
+              data-icon="arrow-left"
+            ></button>
+            <button
+              class="icon-button"
+              id="slide-next"
+              aria-label="Next slide"
+              data-icon="arrow-right"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="brand-ribbon" aria-label="Collection highlights">
+        <span><i aria-hidden="true">✧</i> Modern essentials</span>
+        <span><i aria-hidden="true">✧</i> Every occasion</span>
+        <span><i aria-hidden="true">✧</i> For the whole family</span>
+        <span><i aria-hidden="true">✧</i> A style of your own</span>
+      </div>
+
+      <section class="section collections-section" aria-labelledby="collections-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A WARDROBE FOR EVERY CHAPTER</p>
+            <h2 id="collections-heading">Find your <em>everyday.</em></h2>
+          </div>
+          <p class="section-aside">Three collections. One considered point of view.</p>
+        </div>
+        <!-- Collection image framing is controlled by .women-collection > img and its peers. -->
+        <div class="collection-grid">
+          <button class="collection-card women-collection" data-category="women">
+            <img
+              src="assets/women-campaign.webp"
+              alt="Woman wearing a terracotta midi dress"
+              loading="lazy"
+            />
+            <span class="collection-overlay"></span>
+            <span class="collection-caption">
+              <span>
+                <small>THE WOMEN'S EDIT</small>
+                <strong>For every you.</strong>
+                <span class="collection-link">Shop women <span aria-hidden="true">↗</span></span>
+              </span>
+            </span>
+          </button>
+          <button class="collection-card" data-category="men">
+            <img
+              src="assets/men-campaign.webp"
+              alt="Relaxed menswear in warm neutral tones"
+              loading="lazy"
+            />
+            <span class="collection-overlay"></span>
+            <span class="collection-caption">
+              <span>
+                <small>THE MEN'S EDIT</small>
+                <strong>Simply considered.</strong>
+                <span class="collection-link">Shop men <span aria-hidden="true">↗</span></span>
+              </span>
+            </span>
+          </button>
+          <button class="collection-card" data-category="kids">
+            <img
+              src="assets/kids-campaign.webp"
+              alt="Comfortable clothing for little adventures"
+              loading="lazy"
+            />
+            <span class="collection-overlay"></span>
+            <span class="collection-caption">
+              <span>
+                <small>THE LITTLE EDIT</small>
+                <strong>Small, wonderful days.</strong>
+                <span class="collection-link">Shop kids <span aria-hidden="true">↗</span></span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Search, category, occasion, size, and sorting all combine in the catalogue. -->
+      <section
+        class="section catalogue-section"
+        id="collection"
+        aria-labelledby="catalogue-heading"
+      >
+        <div class="section-heading catalogue-heading-row">
+          <div>
+            <p class="eyebrow" id="catalogue-eyebrow">THE CONSIDERED COLLECTION</p>
+            <h2 id="catalogue-heading">Your next <em>favourite.</em></h2>
+          </div>
+          <button class="text-link" id="size-guide-link">
+            Find your fit <span data-icon="arrow-up-right"></span>
+          </button>
+        </div>
+        <div class="category-tabs" role="group" aria-label="Shop by collection">
+          <button class="active" data-tab="all" aria-pressed="true">
+            All pieces <sup>54</sup>
+          </button>
+          <button data-tab="women" aria-pressed="false">Women <sup>18</sup></button>
+          <button data-tab="men" aria-pressed="false">Men <sup>18</sup></button>
+          <button data-tab="kids" aria-pressed="false">Kids <sup>18</sup></button>
+        </div>
+        <div class="filter-bar">
+          <label class="catalogue-search"
+            ><span class="sr-only">Search products</span><span data-icon="search"></span
+            ><input
+              type="search"
+              id="catalogue-search"
+              placeholder="Find something you love…"
+              autocomplete="off"
+          /></label>
+          <label class="select-field"
+            ><span>Occasion</span
+            ><select id="occasion-filter" aria-label="Filter by occasion">
+              <option value="all">All occasions</option>
+              <option>Everyday</option>
+              <option>Work</option>
+              <option>Festive</option>
+              <option>Occasion</option>
+              <option>Holiday</option>
+              <option>Lounge</option>
+              <option>Active</option>
+              <option>Play</option>
+            </select></label
+          >
+          <label class="select-field"
+            ><span>Size</span
+            ><select id="size-filter" aria-label="Filter by size">
+              <option value="all">All sizes</option>
+            </select></label
+          >
+          <label class="select-field sort-field"
+            ><span>Sort by</span
+            ><select id="sort-filter" aria-label="Sort products">
+              <option value="featured">Our edit</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="name">Name: A–Z</option>
+            </select></label
+          >
+        </div>
+        <div class="results-bar">
+          <p id="results-count" role="status" aria-live="polite"></p>
+          <button id="clear-filters" class="text-link" hidden>
+            Clear filters <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+        <div class="empty-state" id="empty-products" hidden>
+          <span data-icon="search"></span>
+          <h3>No pieces found.</h3>
+          <p>Try another size, occasion, or search. Your next favourite is out there.</p>
+          <button class="button button-olive" id="reset-search">Explore all pieces</button>
+        </div>
+        <div class="catalogue-bottom">
+          <p id="shown-count"></p>
+          <button class="button button-outline" id="show-more">
+            Explore all 54 pieces <span data-icon="arrow-right"></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="occasions-section" id="occasions" aria-labelledby="occasion-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow light">WHATEVER THE DAY HOLDS</p>
+            <h2 id="occasion-heading">Dress for the <em>moment.</em></h2>
+          </div>
+          <p class="section-aside">The right pieces, for all the right reasons.</p>
+        </div>
+        <div class="occasion-grid">
+          <button class="occasion-card" data-occasion="Everyday">
+            <img
+              src="assets/campaign.webp"
+              loading="lazy"
+              alt="Relaxed linen looks for everyday dressing"
+            /><span
+              ><small>01 / EVERYDAY</small><strong>The art of easy.</strong
+              ><i aria-hidden="true">↗</i></span
+            >
+          </button>
+          <button class="occasion-card" data-occasion="Work">
+            <img
+              src="assets/men-campaign.webp"
+              loading="lazy"
+              alt="Considered shirts and tailoring"
+            /><span
+              ><small>02 / WORKDAYS</small><strong>A quiet confidence.</strong
+              ><i aria-hidden="true">↗</i></span
+            >
+          </button>
+          <button class="occasion-card" data-occasion="Festive">
+            <img
+              src="assets/festive-campaign.webp"
+              loading="lazy"
+              alt="Modern Indian festive clothing"
+            /><span
+              ><small>03 / CELEBRATIONS</small><strong>A moment to remember.</strong
+              ><i aria-hidden="true">↗</i></span
+            >
+          </button>
+          <button class="occasion-card" data-occasion="Holiday">
+            <img
+              src="assets/kids-campaign.webp"
+              loading="lazy"
+              alt="Easy outfits for family holidays"
+            /><span
+              ><small>04 / GETAWAYS</small><strong>Out of the ordinary.</strong
+              ><i aria-hidden="true">↗</i></span
+            >
+          </button>
+        </div>
+      </section>
+
+      <section class="story-section" aria-labelledby="story-heading">
+        <div class="story-seal" aria-hidden="true">
+          <span>THE ART OF EVERYDAY</span
+          ><svg viewBox="0 0 48 54" fill="none">
+            <path
+              d="M4 47 24 6l20 41M12 34h24M17 47l7-15 7 15M24 6v16"
+              stroke="currentColor"
+              stroke-width=".7"
+            /></svg
+          ><span>A U R É L</span>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">LESS NOISE. MORE YOU.</p>
+          <h2 id="story-heading">Good style feels<br /><em>like yourself.</em></h2>
+          <p>
+            Modern essentials, meaningful occasions, and all the moments in between. AURÉL brings a
+            considered point of view to dressing women, men, and little ones.
+          </p>
+          <button class="text-link" data-info="story">
+            Meet AURÉL <span data-icon="arrow-right"></span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer help buttons load editable text from data/information.js. -->
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#" class="brand" data-home
+            ><span class="brand-wordmark">AURÉL<span>EVERYDAY, ELEVATED</span></span></a
+          >
+          <p>A wardrobe for every chapter.<br />A little more you, every day.</p>
+        </div>
+        <div class="footer-column">
+          <h3>THE COLLECTION</h3>
+          <button data-category="women">Women</button><button data-category="men">Men</button
+          ><button data-category="kids">Kids</button><button data-all-pieces>All pieces</button>
+        </div>
+        <div class="footer-column">
+          <h3>HERE TO HELP</h3>
+          <button data-info="sizes">Size guide</button
+          ><button data-info="care">Clothing care</button
+          ><button data-info="delivery">Delivery & returns</button
+          ><button data-info="payments">Payment options</button>
+        </div>
+        <div class="footer-column footer-note">
+          <h3>THE AURÉL POINT OF VIEW</h3>
+          <p>Fewer rules. More possibilities.<br />Find the pieces that feel like you.</p>
+          <button class="text-link" data-info="story">
+            Our story <span data-icon="arrow-up-right"></span></button
+          ><span class="region-label">INDIA / INR ₹</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> AURÉL. Everyday, elevated.</p>
+        <div
+          class="payment-marks"
+          aria-label="Payment options preview: UPI, Visa, Mastercard, PayPal"
+        >
+          <span class="upi-mark">UPI<span aria-hidden="true"> ▸</span></span
+          ><span class="visa-mark">VISA</span
+          ><span class="mastercard-mark" aria-label="Mastercard"><i></i><i></i></span
+          ><span class="paypal-mark">PayPal</span>
+        </div>
+      </div>
+      <p class="concept-note">
+        Concept store · Sample products, prices, and imagery · Payments and order fulfilment are not
+        enabled.
+      </p>
+    </footer>
+
+    <!-- Native dialogs provide keyboard focus trapping and Escape-to-close. -->
+    <dialog
+      id="navigation-dialog"
+      class="drawer navigation-dialog"
+      aria-labelledby="navigation-title"
+    >
+      <div class="dialog-heading">
+        <h2 id="navigation-title">Explore AURÉL</h2>
+        <button
+          class="icon-button"
+          data-close
+          aria-label="Close navigation"
+          data-icon="close"
+        ></button>
+      </div>
+      <nav aria-label="Mobile navigation">
+        <button data-category="women">Women <span>18 pieces ↗</span></button
+        ><button data-category="men">Men <span>18 pieces ↗</span></button
+        ><button data-category="kids">Kids <span>18 pieces ↗</span></button
+        ><button data-all-pieces>All pieces <span>54 pieces ↗</span></button
+        ><button data-occasion="Festive">The celebration edit <span>↗</span></button
+        ><button id="mobile-favourites">Saved pieces <span>♡</span></button
+        ><button data-info="sizes">Find your fit <span>↗</span></button>
+      </nav>
+      <p>EVERYDAY, ELEVATED.</p>
+    </dialog>
+
+    <dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">FIND YOUR NEXT FAVOURITE</p>
+          <h2 id="search-title">What speaks to you?</h2>
+        </div>
+        <button class="icon-button" data-close aria-label="Close search" data-icon="close"></button>
+      </div>
+      <form id="search-form">
+        <label class="sr-only" for="global-search">Search the collection</label
+        ><input
+          type="search"
+          id="global-search"
+          name="query"
+          placeholder="Try linen, kurta, kids, or olive…"
+          required
+        /><button class="button button-olive" type="submit">
+          Search <span data-icon="arrow-right"></span>
+        </button>
+      </form>
+      <p class="search-hint">A FEW PLACES TO START</p>
+      <div class="search-suggestions">
+        <button data-search="linen">Linen essentials ↗</button
+        ><button data-search="festive">The festive edit ↗</button
+        ><button data-search="kids">Little favourites ↗</button>
+      </div>
+    </dialog>
+
+    <dialog id="product-dialog" class="product-dialog" aria-labelledby="product-title">
+      <button
+        class="icon-button floating-close"
+        data-close
+        aria-label="Close product details"
+        data-icon="close"
+      ></button>
+      <div id="product-detail"></div>
+    </dialog>
+
+    <dialog id="bag-dialog" class="drawer bag-dialog" aria-labelledby="bag-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">YOUR CONSIDERED COLLECTION</p>
+          <h2 id="bag-title">The shopping bag <span id="bag-title-count"></span></h2>
+        </div>
+        <button
+          class="icon-button"
+          data-close
+          aria-label="Close shopping bag"
+          data-icon="close"
+        ></button>
+      </div>
+      <div id="bag-body"></div>
+      <div id="bag-summary"></div>
+    </dialog>
+
+    <dialog id="checkout-dialog" class="checkout-dialog" aria-labelledby="checkout-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">AURÉL / CHECKOUT PREVIEW</p>
+          <h2 id="checkout-title">A few final details.</h2>
+        </div>
+        <button
+          class="icon-button"
+          data-close
+          aria-label="Close checkout"
+          data-icon="close"
+        ></button>
+      </div>
+      <div id="checkout-body"></div>
+    </dialog>
+
+    <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title">
+      <div class="dialog-heading">
+        <h2 id="info-title"></h2>
+        <button
+          class="icon-button"
+          data-close
+          aria-label="Close information"
+          data-icon="close"
+        ></button>
+      </div>
+      <div id="info-body"></div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
