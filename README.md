@@ -6,8 +6,8 @@ A modern, responsive e-commerce storefront built with clean semantic HTML5, mode
 
 ## 🚀 Live Demo & Preview
 
-- **Live Site:** [Add your deployed Vercel / GitHub Pages link here]
-- **Repository:** [Add your GitHub repository URL here]
+- **Live Site:** - https://aurel-clothing.vercel.app
+- **Repository:** - https://github.com/Shiva21-01/aurel-clothing-source
 
 ---
 
